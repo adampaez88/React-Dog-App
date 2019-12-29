@@ -73,6 +73,18 @@ a {
   color: gray;
 }
 
+.form {
+display: flex;
+justify-content: space-evenly;
+margin-bottom: 3%;
+margin: 2%;
+text-align-last: center;
+}
+
+.form-input {
+  margin: 2%;
+}
+
 .dogs {
   display: flex;
   flex-wrap: wrap;

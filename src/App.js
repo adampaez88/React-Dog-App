@@ -38,8 +38,10 @@ class App extends Component{
         <div>
           <header>
             <DogHeader />
-            <DogForm addDog={this.addDog} />
           </header>
+          <div className='form'>
+            <DogForm addDog={this.addDog} />
+          </div>
           <div className="dogs">
             <DogCollection dogs={dogs}/>
           </div>
