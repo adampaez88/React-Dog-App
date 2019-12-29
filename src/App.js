@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import DogCollection from './components/DogCollection'
+import DogHeader from './components/DogHeader'
+import DogForm from './components/DogForm'
 import './App.css';
+
+const dogURL = 'https://api.thedogapi.com/v1/breeds?limit=25&page=0'
 
 class App extends Component{
 
   state = {
-    dogs: [],
-    selectedDog: null
+    dogs: []
   }
 
   componentDidMount(){
-    fetch('https://api.thedogapi.com/v1/breeds?limit=25&page=0', {
+    fetch(dogURL , {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -21,12 +24,25 @@ class App extends Component{
       .then(response => response.json())
       .then(dogs => this.setState({dogs}))
   }
-    
+  
+  addDog = (dog) => {
+    const {dogs} = this.state 
+    this.setState({
+      dogs: [...dogs, dog]
+    })
+  }
+
     render(){
-      const {dogs, selectedDog} = this.state
+      const {dogs} = this.state
       return (
-        <div className="App">
-          <DogCollection dogs={dogs}/>
+        <div>
+          <header>
+            <DogHeader />
+            <DogForm addDog={this.addDog} />
+          </header>
+          <div className="dogs">
+            <DogCollection dogs={dogs}/>
+          </div>
         </div>
     );
   }

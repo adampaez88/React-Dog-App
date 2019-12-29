@@ -7,7 +7,7 @@ function DogCollection({dogs}){
     })
 
     return(
-        <div>
+        <div className='card-container'>
             {allDogs}
         </div>
     )
