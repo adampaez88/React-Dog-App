@@ -12,7 +12,9 @@ class DogForm extends Component{
         event.preventDefault()
         this.props.addDog(this.state)
         this.setState({
-
+            breed: '',
+            name: '',
+            age: ''
         })
     }
 
@@ -25,33 +27,38 @@ class DogForm extends Component{
 
     render(){
         return(
-            <div>
+            <>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Name:</label>
+                    <label>Name: </label>
                     <input 
                     placeholder='Name'
                     name='name'
-                    required
                     onChange={this.handleChange}
                     value={this.state.name}
+                    required
                     ></input>
-                    <label>Breed:</label>
+                    <label>Breed: </label>
                     <input 
                     name='breed'
                     placeholder='Breed'
-                    required
                     onChange={this.handleChange}
-                    value={this.state.breed}>Breed:</input>
-                    <label>Age:</label>
+                    required
+                    value={this.state.breed}
+                    ></input>
+                    <label>Age: </label>
                     <input
                     name='age'
                     placeholder='Age'
                     required
                     onChange={this.handleChange}
-                    value={this.state.age}></input>
-                    <input type='submit'></input>
+                    value={this.state.age}
+                    ></input>
+                    <input 
+                    className='form-input'
+                    type='submit'
+                    ></input>
                 </form>
-            </div>
+            </>
         )
     }
 
