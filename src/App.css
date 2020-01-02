@@ -85,23 +85,34 @@ text-align-last: center;
   margin: 2%;
 }
 
-.dogs {
+/* .dogs {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 
-}
+} */
 
 .card-container {
   text-align: center;
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .dog-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: solid;
   margin-bottom: 2%;
   background-color: rgb(82, 79, 79);
-  border-radius: 25%;
+  border-radius: 20%;
+  width: 32%;
+}
+
+.dog-pic {
+  height: 70%;
+  width: 70%;
+  margin-top: 2%;
+  cursor: pointer;
 }

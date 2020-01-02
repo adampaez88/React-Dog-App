@@ -5,7 +5,7 @@ function DogHeader(props){
         <header className='dog-header'>
             <div className='button-container'>
                 <button> <a href='localhost:3000'>Home</a></button>
-                <button>Lost Dogs</button>
+                <button>Add Dog</button>
             </div>
 
             <div className='button-container'>
