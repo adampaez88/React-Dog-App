@@ -4,17 +4,21 @@ class DogForm extends Component{
 
     state = {
         breed: '',
-        name: '',
-        age: ''
+        bred_for: '',
+        life_span: '',
+        height: '',
+        weight: ''
     }
 
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addDog(this.state)
         this.setState({
-            breed: '',
             name: '',
-            age: ''
+            bred_for: '',
+            life_span: '',
+            height: '',
+            weight: ''  
         })
     }
 
@@ -29,29 +33,50 @@ class DogForm extends Component{
         return(
             <>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Name: </label>
+                    <label>Breed: </label>
                     <input 
-                    placeholder='Name'
+                    placeholder='Breed'
+                    // type='text'
                     name='name'
                     onChange={this.handleChange}
                     value={this.state.name}
                     required
                     ></input>
-                    <label>Breed: </label>
+                    <label>Bred For: </label>
                     <input 
-                    name='breed'
-                    placeholder='Breed'
+                    placeholder='Bred For'
+                    type='text'
+                    name='bred_for'
                     onChange={this.handleChange}
+                    value={this.state.bred_for}
                     required
-                    value={this.state.breed}
                     ></input>
-                    <label>Age: </label>
+                    <label>Life Span: </label>
                     <input
-                    name='age'
-                    placeholder='Age'
-                    required
+                    type='text'
+                    placeholder='Life Span'
+                    name='life_span'
                     onChange={this.handleChange}
-                    value={this.state.age}
+                    value={this.state.life_span}
+                    required
+                    ></input>
+                    <label>Height: </label>
+                    <input
+                    type='text'
+                    placeholder='Height'
+                    name='height'
+                    onChange={this.handleChange}
+                    value={this.state.height}
+                    required
+                    ></input>
+                    <label>Weight: </label>
+                    <input
+                    placeholder='Weight'
+                    type='text'
+                    name='weight'
+                    onChange={this.handleChange}
+                    value={this.state.weight}
+                    required
                     ></input>
                     <input 
                     className='form-input'
