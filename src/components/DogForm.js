@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class DogForm extends Component{
 
     state = {
@@ -7,19 +8,28 @@ class DogForm extends Component{
         bred_for: '',
         life_span: '',
         height: '',
-        weight: ''
+        weight: '',
+        temperament: '',
+        image_url: '',
+        info_url: ''
     }
+
+    
 
     handleSubmit = (event) => {
         event.preventDefault()
         this.props.addDog(this.state)
         this.setState({
-            name: '',
+            breed: '',
             bred_for: '',
             life_span: '',
             height: '',
-            weight: ''  
+            weight: '',
+            temperament: '',
+            image_url: '',
+            info_url: ''  
         })
+        this.props.handleClick()
     }
 
     handleChange = (event) => {
@@ -33,16 +43,16 @@ class DogForm extends Component{
         return(
             <>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Breed: </label>
+
                     <input 
                     placeholder='Breed'
-                    // type='text'
-                    name='name'
+                    type='text'
+                    name='breed'
                     onChange={this.handleChange}
-                    value={this.state.name}
+                    value={this.state.breed}
                     required
                     ></input>
-                    <label>Bred For: </label>
+                    <label> </label>
                     <input 
                     placeholder='Bred For'
                     type='text'
@@ -51,7 +61,7 @@ class DogForm extends Component{
                     value={this.state.bred_for}
                     required
                     ></input>
-                    <label>Life Span: </label>
+                    <label> </label>
                     <input
                     type='text'
                     placeholder='Life Span'
@@ -60,7 +70,7 @@ class DogForm extends Component{
                     value={this.state.life_span}
                     required
                     ></input>
-                    <label>Height: </label>
+                    <label> </label>
                     <input
                     type='text'
                     placeholder='Height'
@@ -69,13 +79,40 @@ class DogForm extends Component{
                     value={this.state.height}
                     required
                     ></input>
-                    <label>Weight: </label>
+                    <label> </label>
                     <input
                     placeholder='Weight'
                     type='text'
                     name='weight'
                     onChange={this.handleChange}
                     value={this.state.weight}
+                    required
+                    ></input>
+                    <label> </label>
+                    <input
+                    placeholder='Temperament'
+                    type='text'
+                    name='temperament'
+                    onChange={this.handleChange}
+                    value={this.state.temperament}
+                    required
+                    ></input>
+                    <label> </label>
+                    <input
+                    placeholder='Image URL'
+                    type='text'
+                    name='image_url'
+                    onChange={this.handleChange}
+                    value={this.state.image_url}
+                    required
+                    ></input>
+                    <label> </label>
+                    <input
+                    placeholder='Info URL'
+                    type='text'
+                    name='info_url'
+                    onChange={this.handleChange}
+                    value={this.state.info_url}
                     required
                     ></input>
                     <input 
