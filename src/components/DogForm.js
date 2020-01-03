@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+const dogBackend = 'http://localhost:3000/dogs'
 
 class DogForm extends Component{
 
@@ -18,6 +19,17 @@ class DogForm extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
+        const formData = new FormData(event.target)
+        const dogBreed = formData.get('breed')
+        const dogBredFor = formData.get('bred_for')
+        const dogLifeSpan = formData.get('life_span')
+        const dogHeight = formData.get('height')
+        const dogWeight = formData.get('height')
+        const dogTemperament = formData.get('temperament')
+        const dogImage = formData.get('image_url')
+        const dogInfo = formData.get('info_url')
+    
+
         this.props.addDog(this.state)
         this.setState({
             breed: '',
@@ -30,6 +42,23 @@ class DogForm extends Component{
             info_url: ''  
         })
         this.props.handleClick()
+        fetch(dogBackend , {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                breed: dogBreed,
+                bred_for: dogBredFor,
+                life_span: dogLifeSpan,
+                height: dogHeight,
+                weight: dogWeight,
+                temperament: dogTemperament,
+                image_url: dogImage,
+                info_url:  dogInfo,
+                user_id: 1
+            })
+        })
     }
 
     handleChange = (event) => {

@@ -5,7 +5,7 @@ function CommentForm({addComment, comments}){
         return( 
             <div className='comment-list'>
                  <li>{comment}</li>
-                 <button>Update</button>
+                 {/* <button>Update</button> */}
                  <button>Delete</button>
             </div>
            

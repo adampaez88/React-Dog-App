@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import DogForm from './DogForm'
+import DogFilter from './DogFilter'
 
 class DogHeader extends Component{
 
@@ -20,14 +21,11 @@ class DogHeader extends Component{
                 <header className='dog-header'>
                     <div className='button-container'>
                         <button onClick={this.handleClick}>
-                            {show ? 'Close Form' :'Add Dog'}
+                            {show ? 'Close Form' : 'Add Dog'}
                         </button>
                     </div>
                     <div>
-                        <input 
-                            className='dog-search' 
-                            placeholder='Search'
-                        />
+                            <DogFilter updateSearch={this.props.updateSearch} />
                     </div>
         
                     <div className='button-container'>
