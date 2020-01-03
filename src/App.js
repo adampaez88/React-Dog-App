@@ -33,12 +33,12 @@ class App extends Component{
       this.setState({
         search: searchTerm
       })
-      this.dogFilter()
+      this.dogFilter(searchTerm)
     }
 
-    dogFilter = () => {
+    dogFilter = (searchTerm) => {
       const filteredDogs = this.state.dogs.filter(dog => {
-        return dog.breed.toLowerCase().includes(this.state.search.toLowerCase())
+        return dog.breed.toLowerCase().includes(searchTerm.toLowerCase())
       })
       this.setState({filteredDogs})
     }
