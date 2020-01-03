@@ -63,9 +63,8 @@ header {
 
 }
 
-.dog-search {
-  margin-top: 13%;
-  text-align: center;
+.fa-search {
+  margin: .5rem;
 }
 
 .button-container {

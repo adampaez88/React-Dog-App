@@ -53,31 +53,30 @@ class DogCard extends Component{
 
     handleSubmit = (event) => {
         event.preventDefault()
-        const formData = new FormData(event.target)
-        const comment = formData.get('comments')
+        // const formData = new FormData(event.target)
+        // const comment = formData.get('content')
         console.log(comments)
         this.addComment(this.state.content)
         this.setState({
             content: '' 
         })
-        fetch(comments, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                content: comment
-                // user_id: 1,
-                // dog_id: this.props.dog.id          
-            }) 
-        })
+        // fetch(comments, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'Accept': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         content: comment,
+        //         'user_id': 1,
+        //         'dog_id': `${this.props.dog.id}`          
+        //     }) 
+        // })
     }
     
     render(){
         const {isClicked} = this.state
         const {dog} = this.props
-        // console.log(dog)
         return(
             <div className='dog-card'>
                 <img onClick={this.handleClick} src={dog.image_url} className='dog-pic'/>
@@ -93,15 +92,17 @@ class DogCard extends Component{
                         <form onSubmit={this.handleSubmit}>
                             <input 
                                 type='text' placeholder='Comments'
-                                value={this.state.content} name='comments'
+                                value={this.state.content} name='content'
                                 onChange={this.handleChange}
                             />
                             <input type='submit'/>
                         </form>
                         {this.state.comments && 
-                            <CommentForm addComment={this.addComment} 
-                            postExistingComments={this.postExistingComments}
-                            comments={this.state.comments} />
+                            <CommentForm 
+                                addComment={this.addComment} 
+                                postExistingComments={this.postExistingComments}
+                                comments={this.state.comments} 
+                            />
                         }
                     </div>
                     : null
