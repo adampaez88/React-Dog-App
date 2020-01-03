@@ -3,7 +3,7 @@ import DogCard from './DogCard'
 
 function DogCollection({dogs}){
     const allDogs = dogs.map(dog => {
-        // console.log(dog)
+
         return <DogCard dog={dog}/>
     })
     return(

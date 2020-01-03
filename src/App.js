@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import DogCollection from './components/DogCollection'
 import DogHeader from './components/DogHeader'
-import DogForm from './components/DogForm'
+import DogFooter from './components/DogFooter'
 import './App.css';
 
 // const dogURL = 'https://api.thedogapi.com/v1/breeds?limit=172&page=0'
@@ -37,7 +37,6 @@ class App extends Component{
     this.setState({
       dogs: [...dogs, dog]
     })
-    // console.log(dog)
   }
 
     render(){
@@ -45,14 +44,14 @@ class App extends Component{
       return (
         <div>
           <header>
-            <DogHeader />
+            <DogHeader addDog={this.addDog}/>
           </header>
-          <div className='form'>
-            <DogForm addDog={this.addDog} />
-          </div>
           <div className="dogs">
             <DogCollection dogs={dogs}/>
           </div>
+          <footer>
+            <DogFooter />
+          </footer>
         </div>
     );
   }
