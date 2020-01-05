@@ -60,7 +60,20 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
 
+.breed {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.dog-header > .button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-input {
+  margin-bottom: 2%;
 }
 
 .fa-search {
@@ -76,7 +89,9 @@ button:hover {
 }
 
 button {
-  color: gray;
+  color: black;
+  font-weight: 800;
+  font-size: .8rem;
 }
 
 a {
