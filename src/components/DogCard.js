@@ -80,7 +80,7 @@ class DogCard extends Component{
         return(
             <div className='dog-card'>
                 <img onClick={this.handleClick} src={dog.image_url} className='dog-pic'/>
-                <h1>Breed: {dog.breed}</h1>
+                <h1 className='breed'>Breed: {dog.breed}</h1>
                 {isClicked
                     ? <div>
                         <h4>Bred for: {dog.bred_for}</h4>
@@ -93,7 +93,7 @@ class DogCard extends Component{
                             <input 
                                 type='text' placeholder='Comments'
                                 value={this.state.content} name='content'
-                                onChange={this.handleChange}
+                                onChange={this.handleChange} className='comment-input'
                             />
                             <input type='submit'/>
                         </form>
