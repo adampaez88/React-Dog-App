@@ -8,7 +8,7 @@ Ruby is needed. To install Ruby: a) First check if Ruby is installed by entering
 
 Clone the project onto your device, then after cloning, run "bundle install".
 
-Next you'll need to open the backend, 
+Next you'll need to open the backend, to do this go to https://github.com/adampaez88/Dog-backend-mod4/edit/master/README.md, clone this to your terminal by clicking the clone button on the github repo from the link above, doing this will copy a link to your clip board. Now go to the terminal and type the command git clone (copied link from github repo here).
 
 After you have cloned and opened the file, open the backend and the frontend, then open seperate terminals one in the backend file and one in the frontend file. In the backend folder you'll need to run a few commands:
 
