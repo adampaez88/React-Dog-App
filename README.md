@@ -12,6 +12,9 @@ Next you'll need to open the backend, to do this go to https://github.com/adampa
 
 After you have cloned and opened the file, open the backend and the frontend, then open seperate terminals one in the backend file and one in the frontend file. In the backend folder you'll need to run a few commands:
 
-rails db:migrate rails db:seed Once you've run these commands start your backend server by running rails s In the frontend file run the command npm start to open up a tab in your browser and display the webpage!
+1) rails db:migrate 2) rails db:seed 
+Once you've run these commands start your backend server by running rails s 
 
-to view my video of the web app go to 
+In the frontend file run the command npm start to open up a tab in your browser and display the webpage!
+
+to view my video of the web app go to: https://www.youtube.com/watch?v=xPYcvSgJtfo
